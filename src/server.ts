@@ -6,6 +6,7 @@ import { postUserRouter } from "./routes/postUsers";
 import { deleteUserRouter } from "./routes/deleteUser";
 import { editUserRouter } from "./routes/editUser";
 import { Pool } from "pg";
+import { helloRouter } from "./routes/hello";
 
 const pool = new Pool({
   host: process.env.PGHOST,
@@ -36,6 +37,7 @@ app.use(getUsersRouter);
 app.use(postUserRouter);
 app.use(deleteUserRouter);
 app.use(editUserRouter);
+app.use(helloRouter);
 
 app.listen(port, () => {
   console.log("Online...");
